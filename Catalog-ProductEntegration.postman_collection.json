@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "4e44dbdc-91d2-452f-91c5-dded309baf26",
+		"name": "Catalog/ProductEntegration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\": \"hepsiburada_dev\",\r\n\"password\": \"Hb12345!\",\r\n\"authenticationType\": \"INTEGRATOR\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mpop-sit.hepsiburada.com/api/authenticate",
+					"protocol": "https",
+					"host": [
+						"mpop-sit",
+						"hepsiburada",
+						"com"
+					],
+					"path": [
+						"api",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoZXBzaWJ1cmFkYV9kZXYiLCJhdXRoIjoiUk9MRV9MT0NBTCxST0xFX0lOVEVHUkFUT1IiLCJleHAiOjE2MjQwMTg2MDUsInVzZXJJZCI6IjVmMGM5YjZhY2UzNmNlMDAwODI5OGYwOSJ9.4a-9A2EfKdAYSH0Gty7BbQNJ3Zc3Qu-LjVNe-IU99N5ZvTkAXUGyLIt9b6q_4oJZqkRRKaAXNlrurITQbwloQA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://mpop-sit.hepsiburada.com/product/api/categories/get-all-categories?leaf=true&status=ACTIVE&available=true&page=0&size=7500&version=1",
+					"protocol": "https",
+					"host": [
+						"mpop-sit",
+						"hepsiburada",
+						"com"
+					],
+					"path": [
+						"product",
+						"api",
+						"categories",
+						"get-all-categories"
+					],
+					"query": [
+						{
+							"key": "leaf",
+							"value": "true"
+						},
+						{
+							"key": "status",
+							"value": "ACTIVE"
+						},
+						{
+							"key": "available",
+							"value": "true"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "7500"
+						},
+						{
+							"key": "version",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "d55635d0-27e7-47fe-bc50-9e482c251c2f",
+		"name": "OrdersEntegration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateOrders",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Hb12345!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "hepsiburada_dev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n               \"OrderNumber\":\"0412549567\",\r\n               \"OrderDate\":\"2021-06-18T15:29:47\",\r\n               \"Customer\":{\r\n                  \"CustomerId\":\"dfc8a27f-faae-4cb2-859c-8a7d50ee77bp\",\r\n                  \"Name\":\"Sibel Doğan\"\r\n               },\r\n               \"DeliveryAddress\":{\r\n                  \"AddressId\":\"e66765b3-d37d-488c-ae15-47051245dc9y\",\r\n                  \"Name\":\"Sibel Doğan\",\r\n                  \"AddressDetail\":\"Trump Towers\",\r\n                  \"Email\":\"sibelldgnn@hotmail.com\",\r\n                  \"CountryCode\":\"TR\",\r\n                  \"PhoneNumber\":\"905548363526\",\r\n                  \"AlternatePhoneNumber\":\"045321538212\",\r\n                  \"Town\":\"Sisli\",\r\n                  \"District\":\"Kustepe\",\r\n                  \"City\":\"İstanbul\"\r\n               },\r\n               \"LineItems\":[\r\n                  {\r\n                     \"Sku\":\"AYKNO1T0CCF4GC3-43\",\r\n                     \"MerchantId\":\"46778c70-eac9-4586-a482-d0cc506083af\",\r\n                     \"Quantity\":1,\r\n                     \"Price\":{\"Amount\":2,\"Currency\":\"TRY\"},\r\n                     \"Vat\":0,\r\n                     \"TotalPrice\":{\"Amount\":2,\"Currency\":\"TRY\"},\r\n                     \"CargoCompanyId\":2,\r\n                     \"DeliveryOptionId\":1\r\n                  },\r\n                  {\r\n                     \"Sku\":\"AYKNO1T0CCF4GC3-41\",\r\n                     \"MerchantId\":\"46778c70-eac9-4586-a482-d0cc506083af\",\r\n                     \"Quantity\":1,\r\n                     \"Price\":{\"Amount\":1548464,\"Currency\":\"TRY\"},\r\n                     \"Vat\":0,\r\n                     \"TotalPrice\":{\"Amount\":1548464,\"Currency\":\"TRY\"},\r\n                     \"CargoCompanyId\":2,\r\n                     \"DeliveryOptionId\":1\r\n                  }\r\n               ]\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oms-stub-external-sit.hepsiburada.com/orders/merchantid/46778c70-eac9-4586-a482-d0cc506083af",
+					"protocol": "https",
+					"host": [
+						"oms-stub-external-sit",
+						"hepsiburada",
+						"com"
+					],
+					"path": [
+						"orders",
+						"merchantid",
+						"46778c70-eac9-4586-a482-d0cc506083af"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrderListDetail",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Hb12345!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "hepsiburada_dev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://oms-external-sit.hepsiburada.com/orders/merchantid/46778c70-eac9-4586-a482-d0cc506083af/ordernumber/0412549567",
+					"protocol": "https",
+					"host": [
+						"oms-external-sit",
+						"hepsiburada",
+						"com"
+					],
+					"path": [
+						"orders",
+						"merchantid",
+						"46778c70-eac9-4586-a482-d0cc506083af",
+						"ordernumber",
+						"0412549567"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

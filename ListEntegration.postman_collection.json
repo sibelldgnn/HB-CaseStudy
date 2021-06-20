@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "3a26cdc2-03fd-4206-9417-b089b157e2eb",
+		"name": "ListEntegration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ProductList",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Hb12345!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "hepsiburada_dev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://listing-external-sit.hepsiburada.com/listings/merchantid/46778c70-eac9-4586-a482-d0cc506083af",
+					"protocol": "https",
+					"host": [
+						"listing-external-sit",
+						"hepsiburada",
+						"com"
+					],
+					"path": [
+						"listings",
+						"merchantid",
+						"46778c70-eac9-4586-a482-d0cc506083af"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PriceStocUpdate",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Hb12345!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "hepsiburada_dev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<listings xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n        <listing>\r\n            <HepsiburadaSku>SPORTHE634609-XL</HepsiburadaSku>\r\n            <MerchantSku>SPORTHE634609-XL</MerchantSku>\r\n            <ProductName>Sporth Ürün</ProductName>\r\n            <Price>1625</Price>\r\n            <AvailableStock>8</AvailableStock>\r\n            <DispatchTime>3</DispatchTime>\r\n            <MaximumPurchasableQuantity>0</MaximumPurchasableQuantity>\r\n            <CargoCompany1>Aras Kargo</CargoCompany1>\r\n            <CargoCompany2>Yurtiçi Kargo</CargoCompany2>\r\n            <CargoCompany3>Hepsiexpress Kargo</CargoCompany3>\r\n            </listing>\r\n            <listing>\r\n            <HepsiburadaSku>AYKNO1T0CCF4GC3425</HepsiburadaSku>\r\n            <MerchantSku>2616</MerchantSku>\r\n            <ProductName>2616</ProductName>\r\n            <Price>5</Price>\r\n            <AvailableStock>10</AvailableStock>\r\n            <DispatchTime>3</DispatchTime>\r\n            <MaximumPurchasableQuantity>0</MaximumPurchasableQuantity>\r\n            <CargoCompany1>Aras Kargo</CargoCompany1>\r\n            <CargoCompany2>Yurtiçi Kargo</CargoCompany2>\r\n            <CargoCompany3>Hepsiexpress Kargo</CargoCompany3>\r\n            </listing>\r\n</listings>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://listing-external-sit.hepsiburada.com/listings/merchantid/46778c70-eac9-4586-a482-d0cc506083af/inventory-uploads",
+					"protocol": "https",
+					"host": [
+						"listing-external-sit",
+						"hepsiburada",
+						"com"
+					],
+					"path": [
+						"listings",
+						"merchantid",
+						"46778c70-eac9-4586-a482-d0cc506083af",
+						"inventory-uploads"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
